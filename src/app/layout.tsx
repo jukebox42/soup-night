@@ -4,6 +4,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { Box, CssBaseline, Paper } from "@mui/material";
 import Image from "next/image";
 import styles from "./page.module.css";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Soup Night",
@@ -35,7 +36,9 @@ export default function RootLayout({
                 <Image src="/corner-decoration.jpg" alt="decoration" width="48" height="48" className={styles.bl} priority />
                 <Image src="/corner-decoration.jpg" alt="decoration" width="48" height="48" className={styles.br} priority />
                 <Paper elevation={0} sx={{ p: 5, textAlign: "center" }}>
-                  {children}
+                  <Suspense>
+                    {children}
+                  </Suspense>
                 </Paper>
               </Box>
             </Box>
