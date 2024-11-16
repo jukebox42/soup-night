@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Button, CircularProgress, Grid2 as Grid, Typography } from "@mui/material";
 import Form from "./ui/Form";
-import prisma from "#/db/prisma";
+import { checkCode } from "#/db/code";
 
 export default function Home() {
   const router = useRouter();
@@ -11,18 +11,29 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
+  const validateCode = async (code: string) => {
+    const response = await checkCode(code);
+    if (response.error) {
+      console.error("ERROR", response.error);
+      setIsError(true);
+      return
+    }
+    if (!response.success) {
+      router.push("/error");
+      return
+    }
+    setIsLoading(false);
+  };
+
   useEffect(() => {
     const code = searchParams.get("code");
     if (!code) {
       router.push("/error");
       return;
     }
-    // do database check
-    setTimeout(() => setIsLoading(false), 2000);
-
-    // if there's an error matching the code
-    // router.push("/error");
-  }, [])
+    
+    validateCode(code);
+  }, []);
 
   if (isError) {
     return (
@@ -48,10 +59,10 @@ export default function Home() {
   if (isLoading) {
     return (
       <CircularProgress color="secondary" size="5rem" />
-    )
+    );
   }
 
   return (
     <Form />
-  )
+  );
 }

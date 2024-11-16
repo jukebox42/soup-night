@@ -1,12 +1,15 @@
 "use client"
 import { useEffect, useState } from "react";
 import {Button, FormControl, Grid2 as Grid, InputLabel, MenuItem, Select, SelectChangeEvent, TextField, Typography } from "@mui/material";
+import { addGuest } from "#/db/guests";
+import { useRouter } from "next/navigation";
 
 export default function Form() {
+  const router = useRouter();
   const [fullName, setFullName] = useState("");
   const [fullNameValid, setFullNameValid] = useState(true)
   const [count, setCount] = useState("2");
-  const [isError, setisError] = useState(false);
+  const [isError, setIsError] = useState(false);
   const [isDisabled, setIsDisabled] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -26,8 +29,18 @@ export default function Form() {
     setCount(value);
   }
 
-  const onClick = () => {
+  const onClick = async () => {
     setIsSubmitting(true);
+    const newGuest = await addGuest(fullName, parseInt(count));
+    if (!newGuest?.id) {
+      console.error("ERROR", newGuest);
+      setIsError(true);
+    }
+    if (parseInt(count) > 0) {
+      router.push("/success");
+      return;
+    }
+    router.push("/skip");
   }
 
   return (

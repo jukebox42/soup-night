@@ -30,10 +30,10 @@ export default function RootLayout({
               <Box
                 sx={{ height: "calc(100vh - 43px)", m: "5px", p: "5px", border: "1px solid #DE9B72", position: "relative" }}
               >
-                <Image src="/corner-decoration.jpg" alt="decoration" width="48" height="48" className={styles.tl} />
-                <Image src="/corner-decoration.jpg" alt="decoration" width="48" height="48" className={styles.tr} />
-                <Image src="/corner-decoration.jpg" alt="decoration" width="48" height="48" className={styles.bl} />
-                <Image src="/corner-decoration.jpg" alt="decoration" width="48" height="48" className={styles.br} />
+                <Image src="/corner-decoration.jpg" alt="decoration" width="48" height="48" className={styles.tl} priority />
+                <Image src="/corner-decoration.jpg" alt="decoration" width="48" height="48" className={styles.tr} priority />
+                <Image src="/corner-decoration.jpg" alt="decoration" width="48" height="48" className={styles.bl} priority />
+                <Image src="/corner-decoration.jpg" alt="decoration" width="48" height="48" className={styles.br} priority />
                 <Paper elevation={0} sx={{ p: 5, textAlign: "center" }}>
                   {children}
                 </Paper>
