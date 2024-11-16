@@ -25,24 +25,24 @@ export const themeOptions: ThemeOptions = {
   },
   typography: {
     h1: {
-      fontFamily: 'Birthstone',
+      fontFamily: "Birthstone",
     },
     h2: {
-      fontFamily: 'Birthstone',
+      fontFamily: "Birthstone",
     },
     h3: {
-      fontFamily: 'Birthstone',
+      fontFamily: "Birthstone",
     },
     h4: {
-      fontFamily: 'Birthstone',
+      fontFamily: "Birthstone",
     },
     h5: {
-      fontFamily: 'Birthstone',
+      fontFamily: "Birthstone",
     },
     h6: {
-      fontFamily: 'Birthstone',
+      fontFamily: "Birthstone",
     },
-    fontFamily: 'Lato',
+    fontFamily: "Lato",
   }
 };
 
