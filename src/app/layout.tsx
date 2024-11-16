@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import theme from "#/theme/theme";
 import { ThemeProvider } from "@mui/material/styles";
-import { Box, CssBaseline, Paper } from "@mui/material";
+import { Box, Container, CssBaseline, Paper } from "@mui/material";
 import Image from "next/image";
 import styles from "./page.module.css";
 import { Suspense } from "react";
@@ -22,27 +22,63 @@ export default function RootLayout({
         <div className="look-in-here" dangerouslySetInnerHTML={{__html: "<!-- Fooled you. -->"}} />
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <Box
-            sx={{ height: "calc(100vh - 10px)", m: "5px", border: "1px solid #DE9B72" }}
-          >
+          <Container maxWidth="sm" sx={{ p: 0 }}>
             <Box
-              sx={{ height: "calc(100vh - 23px)", m: "5px", border: "5px solid #DE9B72" }}
+              sx={{ height: "calc(100vh - 10px)", m: "5px", border: "1px solid #DE9B72" }}
             >
               <Box
-                sx={{ height: "calc(100vh - 43px)", m: "5px", p: "5px", border: "1px solid #DE9B72", position: "relative" }}
+                sx={{ height: "calc(100vh - 23px)", m: "5px", border: "5px solid #DE9B72" }}
               >
-                <Image src="/corner-decoration.jpg" alt="decoration" width="48" height="48" className={styles.tl} priority />
-                <Image src="/corner-decoration.jpg" alt="decoration" width="48" height="48" className={styles.tr} priority />
-                <Image src="/corner-decoration.jpg" alt="decoration" width="48" height="48" className={styles.bl} priority />
-                <Image src="/corner-decoration.jpg" alt="decoration" width="48" height="48" className={styles.br} priority />
-                <Paper elevation={0} sx={{ p: 5, textAlign: "center" }}>
-                  <Suspense>
-                    {children}
-                  </Suspense>
-                </Paper>
+                <Box
+                  sx={{
+                    height: "calc(100vh - 43px)",
+                    m: "5px",
+                    p: "5px",
+                    border: "1px solid #DE9B72",
+                    position: "relative"
+                  }}
+                >
+                  <Image
+                    src="/corner-decoration.jpg"
+                    alt="decoration"
+                    width="48"
+                    height="48"
+                    className={styles.tl}
+                    priority
+                  />
+                  <Image
+                    src="/corner-decoration.jpg"
+                    alt="decoration"
+                    width="48"
+                    height="48"
+                    className={styles.tr}
+                    priority
+                  />
+                  <Image
+                    src="/corner-decoration.jpg"
+                    alt="decoration"
+                    width="48"
+                    height="48"
+                    className={styles.bl}
+                    priority
+                  />
+                  <Image
+                    src="/corner-decoration.jpg"
+                    alt="decoration"
+                    width="48"
+                    height="48"
+                    className={styles.br}
+                    priority
+                  />
+                  <Paper elevation={0} sx={{ p: 5, textAlign: "center" }}>
+                    <Suspense>
+                      {children}
+                    </Suspense>
+                  </Paper>
+                </Box>
               </Box>
             </Box>
-          </Box>
+          </Container>
         </ThemeProvider>
       </body>
     </html>

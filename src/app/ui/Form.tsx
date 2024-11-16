@@ -68,18 +68,16 @@ export default function Form() {
       </Grid>
       <Grid size={12} sx={{ textAlign: "left" }}>
         <FormControl fullWidth>
-          <InputLabel>Count</InputLabel>
+          <InputLabel>Adults</InputLabel>
           <Select
             value={count}
-            label="Count"
+            label="Adults"
             onChange={onCountChange}
             disabled={isSubmitting}
           >
             <MenuItem value={0}>Cannot Attend</MenuItem>
             <MenuItem value={1}>1</MenuItem>
             <MenuItem value={2}>2</MenuItem>
-            <MenuItem value={3}>3</MenuItem>
-            <MenuItem value={4}>4</MenuItem>
           </Select>
         </FormControl>
       </Grid>
