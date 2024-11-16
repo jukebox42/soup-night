@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  extensions = [pgcrypto]
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model Code {
+  @@map(name: "codes")
+  code               String @id @db.VarChar(200)
+}
+
+model Guest {
+  @@map(name: "guests")
+  id                 String     @default(cuid()) @id @db.VarChar(30)
+  name               String     @db.VarChar(200)
+  count              Int
+  createdAt          DateTime   @default(now()) @map(name: "created_at")
+}
