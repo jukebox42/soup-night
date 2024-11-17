@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a little app to let folks register for a dinner party I'm hosting. trying to keep it fun and entertaining.
 
 ## Getting Started
 
