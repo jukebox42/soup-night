@@ -6,8 +6,8 @@ export const themeOptions: ThemeOptions = {
   palette: {
     mode: "dark",
     background: {
-      default: "#3A3D3E",
-      paper: "#3A3D3E",
+      default: "#000",
+      paper: "#000",
     },
     primary: {
       main: "#DE9B72",
@@ -25,24 +25,24 @@ export const themeOptions: ThemeOptions = {
   },
   typography: {
     h1: {
-      fontFamily: "Birthstone",
+      fontFamily: "Birthstone Bounce",
     },
     h2: {
-      fontFamily: "Birthstone",
+      fontFamily: "Birthstone Bounce",
     },
     h3: {
-      fontFamily: "Birthstone",
+      fontFamily: "Birthstone Bounce",
     },
     h4: {
-      fontFamily: "Birthstone",
+      fontFamily: "Birthstone Bounce",
     },
     h5: {
-      fontFamily: "Birthstone",
+      fontFamily: "Birthstone Bounce",
     },
     h6: {
-      fontFamily: "Birthstone",
+      fontFamily: "Birthstone Bounce",
     },
-    fontFamily: "Lato",
+    fontFamily: "Dosis",
   }
 };
 

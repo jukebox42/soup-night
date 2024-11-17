@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const CornerImage = ({ className }: { className: string }) => (
   <Image
-    src="/corner-decoration.jpg"
+    src="/corner-decoration2.png"
     alt="decoration"
     width="48"
     height="48"
