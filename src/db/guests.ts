@@ -10,3 +10,7 @@ export const addGuest = async (name: string, count: number) => {
   });
   return newGuest;
 };
+
+export const getGuests = async () => {
+  return prisma.guest.findMany();
+}

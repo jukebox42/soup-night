@@ -2,9 +2,9 @@
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { CircularProgress } from "@mui/material";
-import Form from "./ui/Form";
-import { Error } from "./ui/Error";
+import { Error } from "../ui/Error";
 import { checkCode } from "#/db/code";
+import { List } from "../ui/List";
 
 export default function Home() {
   const router = useRouter();
@@ -32,7 +32,7 @@ export default function Home() {
       router.push("/error");
       return;
     }
-    
+
     validateCode(code);
   }, []);
 
@@ -47,6 +47,6 @@ export default function Home() {
   }
 
   return (
-    <Form />
+    <List />
   );
 }
